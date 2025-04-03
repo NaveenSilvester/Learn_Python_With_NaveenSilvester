@@ -123,6 +123,24 @@ print (data[“Title”] # Output: prints the title from the API response
  
 
 """
+###############################################################################
+### Creating a Dictionary
+###############################################################################
+print("\n#############################################################")
+print ("################### Creating a Dictionary ###################")
+print ("Dictionary can be created using Curly bracket")
+school_record = {
+    "Student ID" : "001",
+    "Student Name" : "Allen",
+    "Class" : "9th",
+    "Section" : "C",
+}
+print ("The Dictionary school_record contains the following elements: ", school_record)
+print("#######################################################\n")
+
+
+
+
 my_dict = {"name": "Bob", "age": 30}
 print(my_dict.keys())  # Output: dict_keys(['name', 'age'])
 print (my_dict.values())
