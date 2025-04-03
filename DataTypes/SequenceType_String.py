@@ -260,3 +260,38 @@ print ("Count the number of time Python is repeated in the string: ", text.count
 print ("Find the index of the term time Python in the string (First occurence): ", text.find("Python"))
 print ("Check if the term Programming exists in the text: ", "Programming" in text)
 print ("Check if the term Java not exists in the text: ", "Java" not in text)
+
+
+print ("\n#######################################")
+print ("Partition Strings" )
+print ("""
+•	.partition(separator): Splits the string at the first occurrence of the separator from the left.
+Example: text = “apple-orange-banana”
+result = text.partition(“-“)
+print (result) # Output: ‘apple’ , ‘-‘, “orange-banana” 
+•	.rpartition(separator): Splits the string at the first occurrence of the separator from the right.
+Example: text = “apple-orange-banana”
+result = text.rpartition(“-“)
+print (result) # Output: ‘apple-orange’ , ‘-‘, “banana” 
+
+""")
+
+print ("\n#######################################")
+print (".partition()")
+text = "Apple-Orange-Banana"
+result = text.partition("-")
+print ("The text 'Apple-Orange-Banana' on partition with '-': ", result)
+print(result, type(result))
+
+print ("\n#######################################")
+print (".rpartition()")
+text = "Apple-Orange-Banana"
+result = text.rpartition("-")
+print ("The text 'Apple-Orange-Banana' on partition with '-': ", result)
+print(result, type(result))
+
+print ("\n#######################################")
+print ("zfill(width): width is the total length of the string after padding with zeros")
+print ("Note: The value of the element in the focus is a string not an integer")
+number = "22"
+print("On padding number 22 with width of 5: ", number.zfill(5))
