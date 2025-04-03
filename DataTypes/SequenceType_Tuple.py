@@ -118,6 +118,32 @@ print("#######################################################\n")
 print("\n#######################################################")
 print ("################### Count and Index methods in Tuples ###################")
 mixed_tuple = (1, "Hello", 3.14, True)
-print ("Count method fetches the specified element from the tuple: ", mixed_tuple.count("Hello"))
-print ("Get the 2nd element of mixed_tuple: ", mixed_tuple.index(3.14))
+print ("Count method fetches the index of the specified element from the tuple: ", mixed_tuple.count("Hello"))
+print ("Get the index of the element based on the value: ", mixed_tuple.index(3.14))
+print("#######################################################\n")
+
+
 print("\n#######################################################")
+print ("################### Tuples as Function Returns ###################")
+def calcualte(x,y):
+    return x+y, x*y
+
+print ("Sum and Product of (2,3) are: ", calcualte(2,3))
+print("#######################################################\n")
+
+print("\n#######################################################")
+print ("################### Zip function ###################")
+names = ("Allen", "Lambert", "Kane")
+section = ("C", "B", "A")
+Zipped = zip(names,section)
+print ("Zipped elements as tuples : ", list(Zipped))
+print("#######################################################\n")
+
+
+
+print("\n#######################################################")
+print ("################### Iterations in Tuples ###################")
+data = (("Alice", 25), ("Bob", 30), ("Charlie", 35))
+for name, age in data:
+    print (f"Name is {name} is {age} years old \n")
+print("#######################################################\n")
