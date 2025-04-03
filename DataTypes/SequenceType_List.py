@@ -402,11 +402,3 @@ def generate_numbers():
 gen = generate_numbers()
 for num in gen:
     print (num)
-
-
-list_A = ["A","B","C"]
-list_B = [1,2,3,4]
-list_C = list_A + list_B
-print ("List_C is : ", list_C)
-list_A.append(list_C)
-print (list_A)

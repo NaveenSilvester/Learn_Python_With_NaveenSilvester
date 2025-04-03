@@ -62,12 +62,3 @@ print ("Comparison of two variables a = 0.1 + 0.2 and b = 0.3, the results says 
 print(a == b)
 
 
-C1 = 5 + 3j
-C2 = -2 + 4j
-Addition = C1 + C2
-Subtraction = C1 - C2
-Multiplication = C1 * C2
-
-print("Value of Addition variable is: ", Addition) # Output: 
-print("Value of Subtraction variable is: ", Subtraction) 
-print("Value of Multiplication variable is: ", Multiplication)  
