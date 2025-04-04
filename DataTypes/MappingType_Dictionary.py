@@ -134,19 +134,77 @@ school_record = {
     "Student Name" : "Allen",
     "Class" : "9th",
     "Section" : "C",
+	"Score": 90
 }
 print ("The Dictionary school_record contains the following elements: ", school_record)
 print("#######################################################\n")
 
+print("\n##################################################################################")
+print ("################### Accessing elements from a Dictionary by key ###################")
+print ("Accessing Name of the Student from the Dictionary : ", school_record["Student Name"])
+print ("Accessing Key name by using value from the Dictionary : ", school_record.get("Class"))
+print("####################################################################################\n")
+
+print("\n#####################################################################################")
+print ("################### To Fetch Keys of Dictionary  #####################################")
+print ("Keys of dictionary school_record : ", school_record.keys())
+print("#######################################################################################\n")
+
+print("\n#####################################################################################")
+print ("################### To Fetch Values of Dictionary  #####################################")
+print ("Keys of dictionary school_record : ", school_record.values())
+print("#######################################################################################\n")
+
+print("\n#####################################################################################")
+print ("################### To Fetch Key-Values of Dictionary  ###############################")
+print ("Keys of dictionary school_record : ", school_record.items())
+print("#######################################################################################\n")
+
+print("\n#############################################################################")
+print ("################### Updating Dictionary  #####################################")
+print ("The Dictionary school_record contains the following elements: ", school_record)
+print ("Update Dictionary by adding a new key-value Country value India")
+print ("Updated Dictionary school_record contains the following elements: ", school_record)
+print("################################################################################\n")
+
+print("\n#############################################################################")
+print ("################### Updating Dynamically the values of Dictionary  ###########")
+print ("The Dictionary school_record contains the following elements: ", school_record)
+print ("Dynamic Update Dictionary by adding + 10 to  score")
+school_record["Score"] += 10
+print ("Updated Dictionary school_record contains the following elements: ", school_record)
+print("################################################################################\n")
+
+print("\n##########################################################################################")
+print ("################### Counting occurencey of elements in a list using Dictionary  ###########")
+fruit_basket = ["apple","banana", "orange", "fig", "apple", "orange", "apple", "fig"]
+
+count = {} # declaring a dictionary
+
+for fruit in fruit_basket:
+	count[fruit] = count.get(fruit, 0) + 1
+
+print ("Counts of Fruit in Fruit Basket : ", count)
+print("##########################################################################################\n")
+
+print("\n#######################################################")
+print ("################### Dictionary Comprehension ###########")
+squares = {x:x**2 for x in range(10)}
+print ("Dictionary of Squares : ", squares)
+print("#######################################################\n")
 
 
-
-my_dict = {"name": "Bob", "age": 30}
-print(my_dict.keys())  # Output: dict_keys(['name', 'age'])
-print (my_dict.values())
-my_dict["name"] = "Raj"
-print (my_dict)
-my_dict["Location"] = "Bangalore"
-print (my_dict)
-for key, value in my_dict.items():
-    print (f"Key is {key}, Value is {value}\n")
+print("\n#######################################################################################")
+print ("################### Fetching API data (JSON) and converting it to Dictionary ###########")
+import requests
+response = requests.get("https://jsonplaceholder.typicode.com/posts")
+data = response.json()
+for post in data:
+	print("\n#################################################")
+	print("UserId : ", post["userId"])
+	print("ID : ", post["id"])
+	#print("ID: ", post["id"])
+	print("Title: ", post["title"])
+	print("Body: ", post["body"])
+	print("#################################################\n")
+print("#######################################################################################\n")
