@@ -209,9 +209,12 @@ print("\n#######################################################################
 print ("################### Example-5 Recursive Function #########################################################")
 print("Functions that call themselves to solve smaller instances of the same problem.")
 def factorial(n):
-      if n == 1:
-        return 1
-      return n * factorial (n-1)
+        if not isinstance(n,int):
+              raise ValueError("Not an Integer") 
+        if n == 1:
+            return 1
+      
+        return n * factorial (n-1)
 print("Factorial of 4 is factorial(4) : ", factorial(4))
           
 print("############################################################################################################\n")
@@ -220,7 +223,8 @@ print("#########################################################################
 print("\n##########################################################################################################")
 print ("################### Example-6 Writing Function with Documentation ########################################")
 print("""Python uses docstrings to document functions. A docstring is a multiline string enclosed within triple quotes 
-         placed directly below the function definition. A clear docstring to describe its purpose, parameters, return value, and exceptions:
+placed directly below the function definition. A clear docstring to describe its purpose, parameters, return value, 
+and exceptions:
             1. Purpose of the function
             2. Parameters of the function
             3. Return value
@@ -251,6 +255,39 @@ def calculate_area(length, width):
         raise ValueError("Length and width must be non-negative.")
       
       return length * width
-print ("Area of a rectangle calculate_area(length=3, width=4) : ", calculate_area(3,4))
-          
+print ("Area of a rectangle calculate_area(length=3, width=4) : ", calculate_area(3,4))       
 print("############################################################################################################\n")
+
+print("\n##########################################################################################################")
+print ("################### Example-7 Basic Error Handling #######################################################")
+print ("Error Handling raises and exception and moves on with the program")
+try:
+      num = int(input("Enter a number\n"))
+      print (f"Entered number is : ", num)
+except ValueError:
+      print ("Enter a valid number")
+print("Hello World of Error Handling")     
+print("############################################################################################################\n")
+
+
+print("\n##########################################################################################################")
+print ("################### Example-8 Writing Functions with Test Cases ##########################################")
+print ("Error Handling raises and exception and moves on with the program")
+import unittest
+
+def add(a,b):
+      """
+        Add two numbers
+      """
+      return a + b
+
+# Test Cases
+class TestAddFunction(unittest.TestCase):
+      def test_positive_numbers(self):
+            self.assertEqual(add(7,3), 10)
+      def test_negative_numbers(self):
+            self.assertEqual(add(-3,-7), -10)
+      def test_mixed_numbers(self):
+            self.assertEqual(add(-3,7),4)
+if __name__ == "__main__":
+      unittest.main()
