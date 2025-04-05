@@ -176,7 +176,7 @@ print("##################################################################\n")
 
 
 print("\n####################################################################")
-print ("################### Example-6 Sets Membership Testing ####################")
+print ("################### Example-7 Sets Membership Testing ####################")
 set1 = {1,2,3,4}
 set2 = {3,4,5,6}
 print ("Checking if value 2 exists in set1 (2 in set1): ", (2 in set1))

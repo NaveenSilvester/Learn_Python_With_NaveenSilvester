@@ -131,6 +131,7 @@ def calcualte(x,y):
 print ("Sum and Product of (2,3) are: ", calcualte(2,3))
 print("#######################################################\n")
 
+
 print("\n#######################################################")
 print ("################### Zip function ###################")
 names = ("Allen", "Lambert", "Kane")
@@ -138,7 +139,6 @@ section = ("C", "B", "A")
 Zipped = zip(names,section)
 print ("Zipped elements as tuples : ", list(Zipped))
 print("#######################################################\n")
-
 
 
 print("\n#######################################################")
