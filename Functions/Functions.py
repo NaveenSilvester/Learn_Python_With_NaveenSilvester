@@ -270,15 +270,13 @@ print("Hello World of Error Handling")
 print("############################################################################################################\n")
 
 
+"""
 print("\n##########################################################################################################")
 print ("################### Example-8 Writing Functions with Test Cases ##########################################")
 print ("Error Handling raises and exception and moves on with the program")
 import unittest
 
 def add(a,b):
-      """
-        Add two numbers
-      """
       return a + b
 
 # Test Cases
@@ -291,3 +289,18 @@ class TestAddFunction(unittest.TestCase):
             self.assertEqual(add(-3,7),4)
 if __name__ == "__main__":
       unittest.main()
+
+"""
+
+
+
+
+print("\n##########################################################################################################")
+print ("################### Example-9 Writing Functions with variable arguments###################################")
+def summarize(*args):
+    total = sum(args)
+    print(f"Sum of {args} is {total}")
+
+summarize(1, 2, 3)     # Outputs: Sum of (1, 2, 3) is 6
+summarize(4, 5, 6, 7)  # Outputs: Sum of (4, 5, 6, 7) is 22
+print("############################################################################################################\n")
