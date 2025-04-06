@@ -107,6 +107,107 @@ def safe_cast(value, target_type):
 print(safe_cast("123", int))  # Converts to 123
 print(safe_cast("abc", int))  # Fails and handles the error
 
+
+
+Common built-in exceptions
+1.	ValueError
+Occurs when an operation or function receives an argument of the correct type but an in appropriate value.
+try:
+	number = int(“abc”) # Invalid value for integration conversion
+except ValueError as e:
+	print(f”ValueError: {e}”)
+
+2.	TypeError
+Occurs when an operation or function is applied to an object of inappropriate type.
+try:
+	result = “2”  + 3 # Adding a string to an integer
+except TypeError as e:
+	print(f“TypeError: {e}”)
+
+3.	ZeroDivisionError
+Occurs when division or module by zero is attempted
+try:
+	result = 100/0
+except ZeroDivisionError as e:
+	print(f”ZeroDivisionError : {e}”)
+
+4.	IndexError
+Occurs when attempting to access an invalid index in a sequence (e.g., list or string)
+try:
+	my_list = [1,2,3]
+	print([my_list[5]) # Invalid Index
+except IndexError as e:
+	print(f”IndexError: {e}”)
+
+5.	KeyError
+Occurs when a dictionary key that doesn’t exist is accessed.
+try:
+	my_dict = {“name”: “Allen”}
+	print(my_dict[“age”]) # Non-existent key
+except KeyError as e:
+	print(f”KeyError: {e}”)
+
+6.	AttributeError
+Occurs when an invalid attribute is accessed or an assignment is attempted on an object
+try:
+	num = 5
+	num.append(6) # Integers don’t have an ‘append’ method
+except AttributeError as e:
+	print(f”AttributeError: {e}”)
+
+7.	FileNotFoundError
+Occurs when trying to access or open a file that does not exist
+try:
+	with open(“nonexistent_file.txt”, “r”) as file:
+		content = file.read()
+except FileNotFoundError as e:
+	print(f”FileNotFoundError: {e}”)
+
+8.	ImportError
+Occurs when an import statement fails to find the specified module or cannot load it.
+try:
+	import nonexistent_module # Non-existent module
+except ImportError as e:
+	print(f“ImportError: {e}”)
+
+9.	RuntimeError
+Occurs when an error is detected that does’nt fal into any specific category
+try:
+	raise RunTimeError(“This is a custom runtime error.”)
+except RunTimeError as e:
+	print(f”RunTimeError: {e}”)
+
+10.	StopIteration
+try:
+	my_iter = iter([1,2,3])
+	while True:
+		print(next(my_iter)) # Keep calling ‘next’ until exhausted
+except StopIteration as e:
+	print(f“StopIteration: {e}”)
+
+11.	AssertionError
+Raised when an assert statement fails
+try:
+	x = 10
+	assert x < 5, “value should be less than 5”
+except AssertionError as e:
+	print(f”AssertionError : {e}”)
+
+12.	NameError
+Occurs when a variable or function name that hasn’t been defined is accessed.
+try:
+	print(undefined_variable) # Variable is not defined
+except NameError as e:
+	print(f”NameError: {e}”)
+
+13.	EOFError
+Occurs when the input() function reaches the end of a file (EOF) and no more data is available.
+try:
+	user_input = input(“Enter something: “) # Trigger with end-of-file
+except EOFError as e:
+	print(f”EOFError: {e}”)
+
+
 """
 
 ###############################################################################
@@ -185,10 +286,122 @@ def age_category(x):
            return  ("Middle Aged man\n")
         else:
            return ("Senior Citizen")
+    finally:
+        print ("Program is Completed its run!")
 
 print("Calling the Function age_category(-1) : ", age_category(-1))    
 print("Calling the Function age_category(1) : ", age_category(1))
 print("Calling the Function age_category(12) : ", age_category(12))
 print("Calling the Function age_category(26) : ", age_category(26))
 print("Calling the Function age_category(48) : ", age_category(48))
-print("Calling the Function age_category(51) : ", age_category(51))           
+print("Calling the Function age_category(51) : ", age_category(51))   
+
+
+
+
+print("\n#################################################################################")
+print ("################### Example-5 (ValueError) ######################################")
+try:
+	number = int("abc") # Invalid value for integration conversion
+except ValueError as e:
+	print(f"ValueError: {e}")
+print("#################################################################################\n")
+
+
+print("\n#################################################################################")
+print ("################### Example-6 (TypeError) #######################################")
+try:
+	result = "2" + 3 # Adding a string to an integer
+except TypeError as e:
+	print(f"TypeError: {e}")
+print("#################################################################################\n")
+
+
+print("\n#################################################################################")
+print ("################### Example-7 (ZeroDivisionError) ###############################")
+try:
+	result = 20 / 0 # Dividing by Zero
+except ZeroDivisionError as e:
+	print(f"ZeroDivisionError: {e}")
+print("#################################################################################\n")
+
+print("\n#################################################################################")
+print ("################### Example-8 (IndexError) ###############################")
+try:
+    my_list = [1,2,3]
+    print(my_list[4]) # Invalid Index
+except IndexError as e:
+	print(f"IndexError: {e}")
+print("#################################################################################\n")
+
+print("\n#################################################################################")
+print ("################### Example-9 (KeyError) ###############################")
+try:
+    my_dict = {"name": "Allen"}
+    print(my_dict["age"]) # Invalid key
+except KeyError as e:
+	print(f"KeyError: {e}")
+print("#################################################################################\n")
+
+print("\n#################################################################################")
+print ("################### Example-10 (AttributeError) ###############################")
+try:
+    num = 5
+    num.append(6) # Invalid method
+except AttributeError as e:
+	print(f"AttributeError: {e}")
+print("#################################################################################\n")
+
+print("\n#################################################################################")
+print ("################### Example-11 (FileNotFoundError) ###############################")
+try:
+    with open("Myfile.txt", "r") as file:
+        content = file.read()
+except FileNotFoundError as e:
+	print(f"FileNotFoundError: {e}")
+print("#################################################################################\n")
+
+print("\n#################################################################################")
+print ("################### Example-12 (ImportError) ####################################")
+try:
+    import jn # Non Existing module
+except ImportError as e:
+	print(f"ImportError: {e}")
+print("#################################################################################\n")
+
+print("\n#################################################################################")
+print ("################### Example-13 (StopIteration) #############################")
+try:
+    my_iter = iter([1,2,3])
+    while (True):
+        print(next(my_iter)) # Keep calling "next" unitl exhausted
+except StopIteration as e:
+	print(f"StopIteration: {e}")
+print("#################################################################################\n")
+
+print("\n#################################################################################")
+print ("################### Example-13 (AssertionError) #############################")
+try:
+    x = 10
+    assert x < 5, "value should be less than 5"
+except AssertionError as e:
+	print(f"AssertionError: {e}")
+print("#################################################################################\n")
+
+
+print("\n#################################################################################")
+print ("################### Example-14 (NameError) #############################")
+try:
+    x = 10
+    print(f"Value of x is {y}")
+except NameError as e:
+	print(f"NameError: {e}")
+print("#################################################################################\n")
+
+print("\n#################################################################################")
+print ("################### Example-15 (EOFError) #############################")
+try:
+    user_input = input("Enter your name")
+except EOFError as e:
+	print(f"EOFError: {e}")
+print("#################################################################################\n")
