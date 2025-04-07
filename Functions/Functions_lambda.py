@@ -63,3 +63,6 @@ numbers = [1,2,3,4,5]
 product = reduce(lambda x,y : x * y, numbers)
 print (f"The cummulative product of 1,2,3,4,5 is : {product}")
 print("##################################################################################\n")
+
+squares = lambda x : x ** 2
+print(squares(3))
