@@ -1,0 +1,1 @@
+print("This is the initialization file __init__\n")
