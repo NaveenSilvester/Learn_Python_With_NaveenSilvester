@@ -88,3 +88,62 @@ book = Book("MyBook Title", "Allen")
 print(book)
 print(book.get_author())
 print(book.__repr__())
+print ("################################################################################################################\n")
+
+print ("\n####################### Example-2 (__repr__(self):)###########################################################")
+class Family:
+    def __init__(self,father,mother,son):
+        self.father = father
+        self.son = son
+        self.mother = mother
+    
+    def get_members(self):
+        return (f"Father: {self.father} \n Mother: {self.mother} \n Son: {self.son}")
+    
+    def __repr__(self):
+        return (f"Family(father='{self.father}', mother='{self.mother}' , son='{self.son}' )")
+
+my_family = Family("Raja", "Rani", "Yuvaraja")
+print (f"Repr of Family: {my_family}")
+print (f"Family Members are: \n {my_family.get_members()}")
+print ("################################################################################################################\n")
+
+
+
+print ("\n####################### Example-1 (__str__(self):)###########################################################")
+print ("""
+__str__(self): Defines the string representation used by print() and str().
+The __str__(self) method in Python is a special method used to define the string representation of an object. Its primary goal is to provide a human-readable and user-friendly description of the object. The __str__ method is called when you pass an object to str(), or when using functions like print().
+
+Key Features of __str__(self)
+1.	Human-Readable Output:
+o	The focus is on presenting the object in a way that's clear and concise for the end-user.
+o	This output is typically less detailed than __repr__.
+2.	Default Behavior:
+o	If __str__ is not defined, Python will fall back to using the __repr__ method to represent the object.
+3.	Invoked When:
+o	str(obj) is called.
+o	The object is passed to print() or similar functions.
+""")
+print ("################################################################################################################\n")
+
+
+class School:
+    def __init__(self, name, location):
+        self.name = name
+        self.location = location
+    
+    def __str__(self):
+        return (f"Name of the school {self.name} \n Location of the school {self.location}")
+    
+    def __repr__(self):
+        return (f"School(name ='{self.name}', location = '{self.location}')  ")
+    
+
+myschool = School("SJBHS", "Bangalore")
+print ("################################################################################################################\n")
+print ("Since __str__ function is defined, we get to see the return of str value, else we would get return value from __repr__")
+print ("\n################################################################################################################")
+print("The return value from __str__ is : \n", myschool)
+print ("The return value from __repr__ is : \n", myschool.__repr__())
+print ("\n################################################################################################################")
