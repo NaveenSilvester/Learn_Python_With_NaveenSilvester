@@ -130,3 +130,22 @@ for payment_type in payments:
 print ("####################################################################################\n")
 
 
+from abc import ABC, abstractmethod
+
+class Payment(ABC):
+    @abstractmethod
+    def process_payment(self, amount):
+        pass  # Abstract method
+
+class CreditCardPayment(Payment):
+    def process_payment(self, amount):
+        return f"Processing {amount} via Credit Card."
+
+class PayPalPayment(Payment):
+    def process_payment(self, amount):
+        return f"Processing {amount} via PayPal."
+
+# Using abstraction
+payments = [CreditCardPayment(), PayPalPayment()]
+for payment in payments:
+    print(payment.process_payment(1000))
