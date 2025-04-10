@@ -151,7 +151,7 @@ mycat = Cat("Fluffy")
 mycat.describe()
 mycat.speak()
 
-
+print ("####################################################################################\n")
 
 print ("\n####################### OBJECT ORIENTED PROGRAMMING ################################")
 print ("###################### Example -3 Polymorphism #######################################\n")
@@ -169,7 +169,7 @@ def animal_sound(var):
 
 animal_sound(Bird())
 animal_sound(Dog())
-
+print ("####################################################################################\n")
 
 print ("\n####################### OBJECT ORIENTED PROGRAMMING ################################")
 print ("###################### Example -4 Polymorphism #######################################\n")
@@ -193,3 +193,32 @@ def animal_sound(var):
 
 animal_sound(Bird("Parrot"))
 animal_sound(Dog("Dog"))
+print ("####################################################################################\n")
+
+print ("\n####################### OBJECT ORIENTED PROGRAMMING ################################")
+print ("###################### Example -5 ##################################################\n")
+class vehicle:
+    def __init__(self,brand, year):
+        self.brand = brand
+        self.year = year
+    
+    def get_brand(self):
+        return(f"Name of the Car Brand is {self.brand}")
+    
+    def get_year(self):
+        return(f"Year of Manufacture : {self.year}")
+
+    def get_details(self):
+        return (f"Name of the car brand is {self.brand} manufactured in the year {self.year}")
+
+
+my_vehicle = vehicle("Creta", "2019")
+print (my_vehicle.get_brand())
+print (my_vehicle.get_year())
+print (my_vehicle.get_details())
+print ("####################################################################################\n")
+
+
+
+
+
