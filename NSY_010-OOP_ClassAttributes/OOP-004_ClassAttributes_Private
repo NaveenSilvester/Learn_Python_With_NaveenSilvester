@@ -1,0 +1,60 @@
+##################################################################################################
+#### Class Attributes - Private Attribute
+##################################################################################################
+print ("\n####################################################################################################################")
+print ("""
+                                        Private Attributes
+Private attributes are accessible only within the class where they are defined. Python uses a 
+double underscore __ prefix to denote private attributes. This triggers name mangling, which means 
+       the attribute name is internally changed to include the class name as a prefix.
+
+Example:
+class PrivateExample:
+    def __init__(self):
+        self.__private_attribute = "I am Private"
+
+    def access_private(self):
+        return self.__private_attribute  # Accessible within the class
+
+example = PrivateExample()
+# print(example.__private_attribute)  # This will raise an AttributeError
+print(example._PrivateExample__private_attribute)  # Access using name mangling 
+In this case, __private_attribute cannot be accessed directly outside the class, To access it, you need to use the name-mangled version (_ClassName__atttibuteName).
+
+       """)
+print ("####################################################################################################################\n")
+
+
+print ("\n#####################################################################################################################")
+print ("####################### Example (Private Attribute) ################################################################")
+print ("#####################################################################################################################")
+
+class Parent:
+    def __init__(self):
+        self.__private_attribute = "I am a private atttribute in Parent Class"
+    
+    def get_parent_private_attribute(self):
+        return (f"{self.__private_attribute}")
+    
+    def __str__(self):
+        return ("I am a parent class funcction")
+
+class Child(Parent):
+    def __init__(self):
+        super().__init__()
+        self.child_attribute = "I am child attribute"
+    
+    def get_child_attribute(self):
+        return (f"{self.child_attribute}")
+
+    def get_parent_attr(self):
+        return (f"{super().get_parent_private_attribute()}")
+
+parent = Parent()
+print (parent.get_parent_private_attribute())
+
+child = Child()
+print (child.get_child_attribute())
+print (child.child_attribute)
+print(child.get_parent_attr())
+

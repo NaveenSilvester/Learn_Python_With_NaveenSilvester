@@ -169,4 +169,6 @@ class School:
 my_school = School("Greenwood High", "Bengaluru")
 del my_school.name  # This will call the overridden __delattr__
 print(my_school.location)
-print(my_school.name)
+#print(my_school.name)
+
+print(print.__repr__())
