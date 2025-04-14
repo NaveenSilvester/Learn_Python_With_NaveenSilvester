@@ -33,7 +33,7 @@ print("#########################################################################
 print("""Code Ouput: Use Browser and use this url to check the outputs using the following endpoints:\n 
 http://127.0.0.1:5000
       1. http://127.0.0.1:5000/books
-      2. http://127.0.0.1:5000/book/[1,2]
+      2. http://127.0.0.1:5000/books/multiple?ids=1,2,3
       
 """)
 from flask import Flask, jsonify, request
@@ -56,8 +56,6 @@ def get_books():
     return jsonify(books)
 
 # Fetch a specific book from the databse "books"
-
-
 @app.route('/books/multiple', methods=['GET'])
 def get_multiple_books():
     # Get the 'ids' query parameter as a comma-separated string
@@ -77,6 +75,21 @@ def get_multiple_books():
         return jsonify({"error": "No books found for the provided IDs."}), 404
     
     return jsonify(selected_books)
+
+
+# POST a new book
+@app.route('/books', methods=['POST'])
+def add_book():
+    new_book = request.get_json()
+    books.append(new_book)
+    return jsonify(new_book), 201
+
+# DELETE a book by ID
+@app.route('/books/<int:book_id>', methods=['DELETE'])
+def delete_book(book_id):
+    global books
+    books = [b for b in books if b['id'] != book_id]
+    return jsonify({"message": "Book deleted"}), 200
 
 if __name__ == '__main__':
     app.run(debug=True)
