@@ -149,3 +149,31 @@ class PayPalPayment(Payment):
 payments = [CreditCardPayment(), PayPalPayment()]
 for payment in payments:
     print(payment.process_payment(1000))
+
+
+print ("%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%")
+class Payment:
+    def pay(self, amount):
+        print(f"Paying {amount}")
+
+class CreditCard(Payment):
+    def pay(self, amount):
+        print(f"Paying CreditCard {amount}")
+
+class DebitCard(Payment):
+    def pay(self, amount):
+        print(f"Paying DebitCard {amount}")
+
+# Polymorphism in Action
+def make_payment(payment_type,amount):
+    print(payment_type.pay(amount))
+
+payments = [Payment(),CreditCard(), DebitCard() ]
+print ("$$$$$$$$$$")
+for payment_type in payments:
+    amount = 10
+    make_payment(payment_type, amount)
+print ("####################################################################################\n")
+
+
+

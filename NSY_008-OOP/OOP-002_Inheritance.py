@@ -88,3 +88,28 @@ bike = Bike("BMW", 2, True)
 car.display_fuel_type()
 bike.display_gear_info()
 print("##################################################################################\n")
+
+
+class first:
+    def __init__(self, name, location):
+        self.name = name
+        self.location = location
+    
+    def greet(self):
+        print(f"Name is {self.name}, Location is {self.location}\n")
+
+
+class second(first):
+    def __init__(self, name, location, age):
+        super().__init__(name,location)
+        self.name = name
+        self.location = location
+        self.age = age
+    
+    def greet(self):
+        print(f"Name from second {self.name}, Location {self.location}, Age {self.age}\n")
+
+
+First = first("Naveen", "Bangalore")
+Second = second("Allen", "Bangalore", 15)
+First.greet()
