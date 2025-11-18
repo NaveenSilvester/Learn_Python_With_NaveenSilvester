@@ -164,6 +164,7 @@ print("\n#######################################################################
 print ("################### Updating Dictionary  #####################################")
 print ("The Dictionary school_record contains the following elements: ", school_record)
 print ("Update Dictionary by adding a new key-value Country value India")
+school_record["Countrty"] = "INDIA"
 print ("Updated Dictionary school_record contains the following elements: ", school_record)
 print("################################################################################\n")
 
@@ -194,6 +195,7 @@ print ("Dictionary of Squares : ", squares)
 print("#######################################################\n")
 
 
+""""
 print("\n#######################################################################################")
 print ("################### Fetching API data (JSON) and converting it to Dictionary ###########")
 import requests
@@ -208,3 +210,14 @@ for post in data:
 	print("Body: ", post["body"])
 	print("#################################################\n")
 print("#######################################################################################\n")
+"""
+#names = ["Allen", "Maria", "Allen", "Silvester", "Maria", "Allen"]
+sentence ="How are you? How is life?"
+words = sentence.split(sep=" ")
+print (list)
+
+count={}
+for word in words:
+	count[word] = count.get(word, 0) + 1
+
+print (count)

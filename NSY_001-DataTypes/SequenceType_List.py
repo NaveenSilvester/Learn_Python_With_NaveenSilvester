@@ -277,8 +277,8 @@ print("Appending element '6' to my_list: ", my_list)
 #############################################################################
 ### Inserting element to list at specific position
 #############################################################################
-my_list.insert(0,0)
-print ("Inserting element '0' as the first element of the my_list: ", my_list)
+my_list.insert(0,"A")
+print ("Inserting element 'A' as the first element of the my_list: ", my_list)
 
 #############################################################################
 ### Extending list at specific position
@@ -402,3 +402,13 @@ def generate_numbers():
 gen = generate_numbers()
 for num in gen:
     print (num)
+
+
+print ("$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$")
+matrix = [[1,2,3],[4,5,6],[7,8,9]]
+for i in range(len(matrix)):
+    print (matrix[i])
+
+
+mymat = [[ row[i] for row in matrix] for i in range(len(matrix))]
+print(mymat)
