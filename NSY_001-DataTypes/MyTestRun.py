@@ -199,3 +199,216 @@ copied_list = original_list.copy()
 original_list[4][0] = 99
 print(original_list)  
 print(copied_list)    
+print("#######################################################\n")
+
+import copy
+l7 = [1,2,3,["Four","Five"], 6]
+l7c = copy.deepcopy(l7)
+print (f"The Elements in l7 are: {l7}")
+print (f"The Elements in l7c are: {l7c}")
+l7[3][0] = 4
+print (f"The Elements in l7 are: {l7}")
+print (f"The Elements in l7c are: {l7c}")
+print("#######################################################\n")
+
+
+l8 = ["Naveen", "Silvester", "Maria", "Josi", "Allen", "Thomas"]
+for i in l8:
+    print (f"{i} number of letters {len(i)}")
+l8n = [(i, len(i)) for i in l8]
+print(l8n)
+print("#######################################################\n")
+
+matrix = [[1,2,3], [4,5,6], [7,8,9]]
+print (matrix)
+print (len(matrix))
+
+"""
+1r,1e
+2r,1e
+3r,1e
+
+1r,2e
+2r,2e
+3r,2e
+
+"""
+
+print(f"HERE is 0,0 {matrix[0][0]}")
+for i in range(3):
+    for j in range(3):
+       # print (f"{j},{i}")
+       # print (f"{matrix[j][i]}")
+        print (f"{j},{i} ::: {matrix[j][i]}")
+
+
+tmatrix = [ [row[col] for row in matrix] for col in range(len(matrix[0]))] 
+print (tmatrix)
+print("#######################################################\n")
+
+
+nested = [[1,2,3,4], [5,6], [7,8,9]]
+flat = [ j for i in nested for j in i]
+print (flat)
+print("#######################################################\n")
+
+words = ["apple", "banana", "cherry"]
+l = [ (index, w) for index, w in enumerate(words, start=1)]
+print(l)
+print("#######################################################\n")
+
+
+def gen_num(x):
+    for i in range(x):
+        yield(i)
+gen = gen_num(10)
+print (f"Type of gen is {type(gen)}")
+
+""" for num in gen:
+    print(num)
+"""
+
+def infinite_counter():
+ n=0
+ while True:
+    yield n
+    n += 1
+
+counter = infinite_counter()
+for i in range(5):
+      print (next(counter))
+
+
+
+print("#######################################################\n")
+t1 = (1, "Two")
+print (f"The value of t is: {t1}")
+print (f"Type of variable t is : {type(t1)}")
+a,b = t1
+print (b,a)
+
+t2 = ("Three", 4)
+result = t1 + t2
+print (result)
+
+print("#######################################################\n")
+t3 = (1,2,3,4,5,1,2,1,5,5,5,5,6,6,6,6,6,6)
+print (t3.count(1))
+t3set = set(t3)
+print(t3set)
+freq = [(i, t3.count(i)) for i in t3set]
+print(freq)
+freq.insert(0, ("Num", "Freq"))
+print(freq)
+print("#######################################################\n")
+
+
+d1 = {"Country":"INDIA", "Continent":"Asia", "Population": "Billions", "CountryCode":91}
+print (d1)
+print((f"The data type of d1 is : {type(d1)}"))
+print(f"The Name of Country is {d1["Country"]}")
+print(d1.get('Continent'))
+
+
+print("#######################################################\n")
+personal_info = {"Name": "Raj", "Age": 25, "Country": "Singapore"}
+print(f"The values in personal_info are {personal_info}")
+print(f"Updating age from 25 to 35 for Raj")
+personal_info["Age"] = 35
+print(f"The values in personal_info are {personal_info}")
+personal_info["Code"] = 91
+print(f"The values in personal_info are {personal_info}")
+print("#######################################################\n")
+
+
+personal_info = {"Name": "Raj", "Age": 25, "Country": "Singapore", "Code":91}
+print (f"The Value in dictionary personal_info are: {personal_info}")
+for k in personal_info.keys():
+    print (f"Keys in dictionary are: {k}")
+
+for v in personal_info.values():
+    print (f"Values in dictionary are: {v}")
+
+for k, v in personal_info.items():
+    print (f"Key Value pairs in dictionary are {k,v}")
+
+print ("Remove the Key Code from Dictionary personal_info")
+print (f"{personal_info.pop("Code")}")
+print (f"The New updated Value in dictionary personal_info are: {personal_info}")
+personal_info["SerialNumber"] = "001"
+print (f"The New updated Value in dictionary personal_info are: {personal_info}")
+print("#######################################################\n")
+
+fruits = ["apple", "banana", "orange", "apple", "orange", "apple", "mango"]
+count ={}
+for fruit in fruits:
+    count[fruit] = count.get(fruit, 0) +1
+print (count)
+print("#######################################################\n")
+
+
+fruits = ["apple", "banana", "orange", "apple", "orange", "apple", "mango"]
+f = set(fruits)
+n={}
+for i in f:
+    print (f"{i} :{fruits.count(i)}")
+    n[i] = fruits.count(i)
+print (n)
+print("#######################################################\n")
+
+fruits = ["apple", "banana", "orange", "apple", "orange", "apple", "mango"]
+nf = [(f, fruits.count(f)) for f in (set(fruits))]
+print (nf)
+nf=dict(nf)
+print(nf)
+print("#######################################################\n")
+
+fruits = ["apple", "banana", "orange", "apple", "orange", "apple", "mango"]
+df = dict([(f, fruits.count(f)) for f in (set(fruits))])
+print(df)
+print("#######################################################\n")
+
+fruits = ["apple", "banana", "orange", "apple", "orange", "apple", "mango"]
+df = {f: fruits.count(f) for f in set(fruits)}
+print (df)
+print("#######################################################\n")
+
+"""
+import requests
+response = requests.get("https://jsonplaceholder.typicode.com/todos/2")
+data = response.json() 
+print (data["title"])
+
+print("#######################################################\n")
+
+"""
+
+my_set = {1,3,0,2, 89,100}
+print(f"The values in my_set are: {my_set}")
+print(f"DataType of my_set is {type(my_set)}")
+my_list = list(my_set)
+print(f"DataType of my_set is {type(my_set)}")
+print(f"DataType of my_set is {type(my_list)}")
+print(my_list)
+print(sorted(my_list))
+print(sorted(my_list,reverse=True))
+print("#######################################################\n")
+
+Fruits = {"Apple", "Banana", "Fig", "Beans"}
+Vegies = {"Beans", "Carrot", "Beetroot"}
+print (f"Fruits are: {Fruits}")
+print (f"Veggies are: {Vegies}")
+print (f"Common items between Fruits and Vegies: {Fruits & Vegies}") 
+print (f"Combining Fruits and Vegies: {Fruits | Vegies}")
+print (f"Present only in Fruits {Fruits - Vegies}")
+print (f"Present only in Vegies {Vegies - Fruits}")
+print(f"Elements in both set but not both (symemtric Difference) {Fruits ^ Vegies}")
+print (f"Is Apple an element in Fruits - {"Apple" in Fruits}")
+print (f"Is Beetroot an element in Fruits - {"Beetroot" in Fruits}")
+print("#######################################################\n")
+
+Set1 = {1,2,3,4,5,5}
+print (f"Elements in Set1 are: {Set1}")
+Set2 = frozenset(Set1)
+print (f"Elements in Set1 are: {Set2}")
+print (f"Data type of Set2 is {type(Set2)}")
