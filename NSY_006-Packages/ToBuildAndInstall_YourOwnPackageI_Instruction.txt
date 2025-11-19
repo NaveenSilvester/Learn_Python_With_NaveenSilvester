@@ -1,0 +1,16 @@
+1. Created a folder called it by name "MyPackage"
+2. Created a folder named "Math"
+3. Created an empty file under the folder Math with the name "__init__.py"
+4. Created a file named "operations.py" with the functionality codes in it. This file is also under Math folder.
+5. Open the file "__init__.py" and add write the line for importing the modules "from .operations import add, subtract, multiply"
+6. Create setup.py file right under MyPackage folder
+7. Create README and LICENSE files under the MyPackage Folder
+8. Build the package by typing python -m build under the MyPackage Folder. Once the build is complete, you would see folder named dist created and within it are the tar.gz file and .whl files.
+
+To Install package locally.
+1. Go to the MyPackage Folder and type in command prompt pip install .
+2. The installation will be done, once done you can test the package by test scripts
+import Math as m
+print (m.add(1,5))
+
+ 
