@@ -1,1 +1,2 @@
-Hello
+Hello, This is the file contents from the file named MyFile.txt
+This is the second line in the file
